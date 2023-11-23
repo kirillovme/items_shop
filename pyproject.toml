@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "items-shop"
+version = "0.1.0"
+description = ""
+authors = ["kirillovme <54503407+kirillovme@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^4.2.7"
+stripe = "^7.6.0"
+gunicorn = "^21.2.0"
+psycopg2-binary = "^2.9.9"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
