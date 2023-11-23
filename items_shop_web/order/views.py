@@ -1,9 +1,8 @@
 import stripe
-from django.http import JsonResponse, HttpResponse, HttpRequest
-from django.shortcuts import render, get_object_or_404
 from django.conf import settings
+from django.http import HttpRequest, HttpResponse, JsonResponse
+from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
-
 from order.models import Order
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -66,9 +65,9 @@ def order_detail(request: HttpRequest, order_id: int) -> HttpResponse:
 
 def payment_success(request: HttpRequest) -> HttpResponse:
     """Возвращает страницу при успешной оплате заказа."""
-    return HttpResponse("Order checkout succeeded!")
+    return HttpResponse('Order checkout succeeded!')
 
 
 def payment_cancel(request: HttpRequest) -> HttpResponse:
     """Возвращает страницу при отмененной оплате заказа."""
-    return HttpResponse("Order checkout was cancelled.")
+    return HttpResponse('Order checkout was cancelled.')

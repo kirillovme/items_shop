@@ -1,10 +1,9 @@
 import stripe
-from django.http import JsonResponse, HttpResponse, HttpRequest
+from django.conf import settings
+from django.http import HttpRequest, HttpResponse, JsonResponse
 from django.shortcuts import render
 from django.urls import reverse
-
 from item.models import Item
-from django.conf import settings
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
@@ -42,9 +41,9 @@ def item_detail(request: HttpRequest, item_id: int) -> HttpResponse:
 
 def payment_success(request: HttpRequest) -> HttpResponse:
     """Возвращает страницу при успешной оплате предмета."""
-    return HttpResponse("Item payment succeeded!")
+    return HttpResponse('Item payment succeeded!')
 
 
 def payment_cancel(request: HttpRequest) -> HttpResponse:
     """Возвращает страницу при отмененной оплате предмета."""
-    return HttpResponse("Item payment was cancelled.")
+    return HttpResponse('Item payment was cancelled.')
