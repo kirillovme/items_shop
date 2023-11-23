@@ -26,5 +26,9 @@ class Tax(models.Model):
     name = models.CharField(max_length=100)
     tax_percent = models.FloatField()
 
+    class Meta:
+        verbose_name = 'Tax'
+        verbose_name_plural = 'Taxes'
+
     def __str__(self):
         return self.name
